@@ -1,8 +1,8 @@
 import random
 
 def turn(player, board): 
-    # empty(bool) = True(Empty Room) or False(Occupied Room)
-    # bank(int) = Amount of Coins in Player's Bank
+    # player = you, the player
+    # board = the game board
     die1 = random.randint(1,6)
     die2 = random.randint(1,6)
     total = die1 + die2
