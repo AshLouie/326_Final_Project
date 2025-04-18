@@ -8,7 +8,7 @@ def turn(player, board):
         board (list): coins on the board
 
     Returns:
-        messages of what you rolled and what changes to player and board
+        str: messages of what you rolled and what changes to player and board
     """
     die1 = random.randint(1,6)
     die2 = random.randint(1,6)
