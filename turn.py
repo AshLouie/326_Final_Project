@@ -1,8 +1,15 @@
 import random
 
 def turn(player, board): 
-    # player = you, the player
-    # board = the game board
+    """what goes on a single normal turn
+
+    Args:
+        player (list): coins in your bank
+        board (list): coins on the board
+
+    Returns:
+        messages of what you rolled and what changes to player and board
+    """
     die1 = random.randint(1,6)
     die2 = random.randint(1,6)
     total = die1 + die2
