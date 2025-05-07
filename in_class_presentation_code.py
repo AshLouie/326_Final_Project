@@ -4,6 +4,26 @@
 import random
 import argparse
 
+def clear_board(board, skip_room=None):
+    """
+    Clears coins from all rooms on the board except one optional room.
+
+    Args:
+        board (dict): Dictionary mapping room numbers to coin counts.
+        skip_room (int or None): Room number to exclude from clearing.
+
+    Returns:
+        int: Total number of coins removed from the board.
+    """
+    total = 0
+    for room in board:
+        if room == skip_room:
+            continue
+        total += board[room]
+        board[room] = 0
+    return total
+
+
 def turn(player, board): 
     """what goes on a single normal turn
 
@@ -20,10 +40,7 @@ def turn(player, board):
     message = f"You rolled a {total}. "
 
     if total == 2: # Lucky Pig
-        earnings = sum(coins for room, coins in board.items() if room != 7)
-        for room in board:
-            if room != 7:
-                board[room] = 0
+        earnings = clear_board(board, skip_room=7)
         player['coins'] += earnings
         return message + f"Lucky Pig! \
             Collect {earnings} coins from the entire board minus room 7."
@@ -40,9 +57,7 @@ def turn(player, board):
             return message + f"Wedding! No coins to place."
     
     if total == 12: # King
-        earnings = sum(board.values())
-        for room in board:
-            board[room] = 0
+        earnings = clear_board(board)
         player['coins'] += earnings
         return message + f"King! Collect all {earnings} coins from the board."
     
@@ -61,12 +76,46 @@ def turn(player, board):
         
         
 if __name__ == "__main__":
+    """
+    Parses input arguments, initializes game state, and runs the game loop.
+
+    Runs until only one player has coins remaining.
+    """
     parser = argparse.ArgumentParser(description= "Single turn of Gluckshaus")
+    parser.add_argument("names", nargs="+", help="Names of players")
     parser.add_argument("coins", type = int, help= "Starting number of coins")
     args = parser.parse_args()
     
-    player = {'coins': args.coins}
+    players = [{'name': name, 'coins': args.coins} for name in args.names]
     board = {room: 0 for room in [3, 5, 6, 7, 8, 9, 10, 11]}
-    result = turn(player, board)
     
-    print(result)
+    round_num = 1
+    game_over = False
+
+    while not game_over:
+        print(f"\n=== Round {round_num} ===")
+        
+        for player in players:
+            if player["coins"] == 0:
+                print(f"{player['name']} has no coins. Skipping turn.")
+                continue
+
+            print(f"\n{player['name']}'s turn:")
+            result = turn(player, board)
+            print(result)
+            print(f"{player['name']} now has {player['coins']} coins.")
+
+        print("\n-- Board --")
+        for room in sorted(board):
+            print(f"Room {room}: {board[room]} coin(s)")
+
+        active_players = [p for p in players if p["coins"] > 0]
+        if len(active_players) == 1:
+            print(f"\nGAME OVER! {active_players[0]['name']} wins!")
+            game_over = True
+        elif len(active_players) == 0:
+            print("\nGAME OVER! No coins left. Tie!")
+            game_over = True    
+        else:
+            input("\nPress Enter to continue to the next round...")
+            round_num += 1
