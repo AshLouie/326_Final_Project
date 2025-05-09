@@ -75,6 +75,43 @@ def turn(player, board):
             return message + f"Room {total} was occupied. Take 1 coin."
         
         
+def special_event(round_num, player, board):
+    """
+    Triggers a special event every 4th round of the game.
+
+    Args:
+        round_num (int): the current round number
+        player (dict): the dictionary contain "name" and "coin"
+        board (dict): the board mapping out room numbers to coin counts.
+
+    Returns:
+        bool: True if a special event occurred, False otherwise
+    """
+    if round_num % 4 == 0:
+        die1 = random.randint(1,6)
+        die2 = random.randint(1,6)
+        total = die1 + die2
+        print (f"Special Round Triggered!!!!")
+
+        if total == 8:
+            if player["coins"] >= 2:
+                player["coins"] -= 2
+                board[7] += 2 
+                print(f"{player["name"]} rolled 8: put 2 coins in room 7 please.")
+            else:
+                print(f"{player["name"]} rolled 8 but doesn’t have enough coins.")
+        
+        if total == 10:
+            if board[8] >= 2:
+                player["coins"] += 2
+                board[8] -= 2
+                print(f"{player["name"]} rolled 10! They can take 2 coins from room 7")
+            else:
+                print(f"there's not enough coins in room 7 for you to take :("
+                      f"Try again next time!")
+                return True
+    return False        
+        
 if __name__ == "__main__":
     """
     Parses input arguments, initializes game state, and runs the game loop.
@@ -105,6 +142,8 @@ if __name__ == "__main__":
             print(result)
             print(f"{player['name']} now has {player['coins']} coins.")
 
+            special_event(round_num, player, board)
+            
         print("\n-- Board --")
         for room in sorted(board):
             print(f"Room {room}: {board[room]} coin(s)")
