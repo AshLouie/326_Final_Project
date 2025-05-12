@@ -3,6 +3,7 @@
 
 import random
 import argparse
+import re 
 
 def clear_board(board, skip_room=None):
     """
@@ -112,6 +113,18 @@ def special_event(round_num, player, board):
                 return True
     return False
 
+
+def valid_name(name):
+    """
+    Check if the input's name is valid
+
+    Args:
+        name (str): player's name
+    """
+    pattern = r"[a-zA-Z]*$"
+    return re.match(pattern, name) is not None
+
+
 def end_game_check (players, special_spots):
     """Basic end game condition check code. Will end game and declare winner
         based on which condition is satisfied    
@@ -157,7 +170,16 @@ if __name__ == "__main__":
     parser.add_argument("coins", type = int, help= "Starting number of coins")
     args = parser.parse_args()
     
-    players = [{'name': name, 'coins': args.coins} for name in args.names]
+    valid_names = []
+
+    for name in args.names:
+        if valid_name(name):
+            valid_names.append(name) 
+        else:
+            print(f"Invalid name '{name}'. Must contains only letters.")
+            name = input("Please enter a valid name: ")
+    
+    players = [{'name': name, 'coins': args.coins} for name in valid_names]
     board = {room: 0 for room in [3, 5, 6, 7, 8, 9, 10, 11]}
     
     round_num = 1
