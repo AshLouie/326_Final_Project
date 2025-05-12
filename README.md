@@ -17,7 +17,7 @@ To run our program in the terminal, you should follow these few steps:
 
         a. 'python final_program.py Ash Chappon Nhi Justin 10'
 
-    6. The program will giuve you clear instructions on how to move through each
+    6. The program will give you clear instructions on how to move through each
     round, and will give a clear end game message if the conditions are met.
 
 # Files in Repo
@@ -74,7 +74,11 @@ If all of these criteria are met, the end game sequence will begin.
 ## final_program.py
 The final draft of our program. This file contains all of our individual 
 functions with any necessary changes made to allow program to run from the 
-terminal and meet all assignment criteria.
+terminal and meet all assignment criteria. 
+
+## valid_name.py
+The function that check if the player's name is valid. A player's name can only
+contains letters.
 
 # Annotated Bibliography
 Baron Aurddeilen-ap-Robet. (2017, March 11). Gambling Games. Medieval People at 
@@ -94,3 +98,5 @@ Wikipedia Contributors. (2024, May 29). Glückshaus. Wikipedia; Wikimedia
 |def end_game_check|Ashleigh Louie|comprehensions or generator expressions|
 |def turn|Justin Namgung|randomization|
 |def turn|Justin Namgung|if-else statements|
+|parse_args| Nhi Vu|ArgumentParser class
+|def valid_name|Nhi Vu| regular expressions
