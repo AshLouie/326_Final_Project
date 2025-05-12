@@ -3,14 +3,20 @@ Final Project for INST326.
 
 # Running Our Program
 To run our program in the terminal, you should follow these few steps:
-    1. Navigate to the folder in which our program lives\n
-    2. First, input "python final_program.py"\n
+    1. Navigate to the folder in which our program lives
+
+    2. First, input "python final_program.py"
+
     3. Then, enter the names of the players. There must be at least two names
-    for the program to run properly\n
+    for the program to run properly
+
     4. You will then enter the number of coins you want each player to start
-    with.\n
-    5. An example terminal input looks like this:\n
-        a. 'python final_program.py Ash Chappon Nhi Justin 10'\n
+    with.
+
+    5. An example terminal input looks like this:
+
+        a. 'python final_program.py Ash Chappon Nhi Justin 10'
+
     6. The program will giuve you clear instructions on how to move through each
     round, and will give a clear end game message if the conditions are met.
 
@@ -31,14 +37,18 @@ played. Will remove all coins from rooms except for one room, room 7.
 Function that takes a number rolled by randint and takes or removes coins 
 from the board depending on the amount. The specific conditions are: 
     - On a roll of 3, 5, 6, 8, 9, 10 or 11, the player places a coin on the 
-    board if that room is empty, or takes the coin if it is occupied.\n
+    board if that room is empty, or takes the coin if it is occupied.
+
     - If the player rolls snake eyes(1 on both dice), he has rolled a 
     "Lucky Pig" and collects all the coins on the board, except for what 
-    lies in room 7.\n
-    - If the player rolls a 12, he is "king" and wins all coins on the board.\n
+    lies in room 7.
+
+    - If the player rolls a 12, he is "king" and wins all coins on the board.
+
     - If the player rolls a 7, there is a "wedding" going on in the room, and 
     one has to put a coin on there no matter what. This builds up a jackpot 
-    until the "king" (12) is rolled.\n
+    until the "king" (12) is rolled.
+
     - If the player rolls a 4, nothing happens and they get to skip a turn.
 
 ## special_event.py
@@ -54,8 +64,11 @@ skip their turn. The rule would stay the same for all other numbers.
 First iteration of the function that will check each round, whether or not a 
 certain set of criteria are met, initiating the end game sequence. This function 
 will check these criteria:
+
     - Whether or not spaces have coins
+
     - One player has acquired all of the coins
+
 If all of these criteria are met, the end game sequence will begin.
 
 ## final_program.py
@@ -79,7 +92,5 @@ Wikipedia Contributors. (2024, May 29). Glückshaus. Wikipedia; Wikimedia
 |-----------------|----------------|-------------------------|
 |def              |Ashleigh        |f-strings containing     |
 |end_game_check   |Louie           |expressions              |
-|-----------------|----------------|-------------------------|
 |def              |Ashleigh        |Comprehensions or        |
 |end_game_check   |Louie           |or Generator Expressions |
-|-----------------|----------------|-------------------------|
