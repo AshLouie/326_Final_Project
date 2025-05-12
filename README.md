@@ -94,3 +94,5 @@ Wikipedia Contributors. (2024, May 29). Glückshaus. Wikipedia; Wikimedia
 |def end_game_check|Ashleigh Louie|comprehensions or generator expressions|
 |def turn|Justin Namgung|randomization|
 |def turn|Justin Namgung|if-else statements|
+|def clear_board|Chapponarot Bornhor|iteration over a dictionary|
+|__main__ game loop|Chapponarot Bornhor|argument parsing|
