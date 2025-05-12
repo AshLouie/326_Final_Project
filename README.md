@@ -1,6 +1,19 @@
 # 326_Final_Project
 Final Project for INST326.
 
+# Running Our Program
+To run our program in the terminal, you should follow these few steps:
+    1. Navigate to the folder in which our program lives\n
+    2. First, input "python final_program.py"\n
+    3. Then, enter the names of the players. There must be at least two names
+    for the program to run properly\n
+    4. You will then enter the number of coins you want each player to start
+    with.\n
+    5. An example terminal input looks like this:\n
+        a. 'python final_program.py Ash Chappon Nhi Justin 10'\n
+    6. The program will giuve you clear instructions on how to move through each
+    round, and will give a clear end game message if the conditions are met.
+
 # Files in Repo
 
 ## collaborative_programming.py
@@ -18,14 +31,14 @@ played. Will remove all coins from rooms except for one room, room 7.
 Function that takes a number rolled by randint and takes or removes coins 
 from the board depending on the amount. The specific conditions are: 
     - On a roll of 3, 5, 6, 8, 9, 10 or 11, the player places a coin on the 
-    board if that room is empty, or takes the coin if it is occupied.
+    board if that room is empty, or takes the coin if it is occupied.\n
     - If the player rolls snake eyes(1 on both dice), he has rolled a 
     "Lucky Pig" and collects all the coins on the board, except for what 
-    lies in room 7.
-    - If the player rolls a 12, he is "king" and wins all coins on the board.
+    lies in room 7.\n
+    - If the player rolls a 12, he is "king" and wins all coins on the board.\n
     - If the player rolls a 7, there is a "wedding" going on in the room, and 
     one has to put a coin on there no matter what. This builds up a jackpot 
-    until the "king" (12) is rolled.
+    until the "king" (12) is rolled.\n
     - If the player rolls a 4, nothing happens and they get to skip a turn.
 
 ## special_event.py
@@ -50,5 +63,23 @@ The final draft of our program. This file contains all of our individual
 functions with any necessary changes made to allow program to run from the 
 terminal and meet all assignment criteria.
 
-# Running Our Program
+# Annotated Bibliography
+Baron Aurddeilen-ap-Robet. (2017, March 11). Gambling Games. Medieval People at 
+    Play. https://rusticadornments.wordpress.com/2017/03/11/gambling-games/
 
+Ivan Beldiagin. (2019, June 3). Glückshaus Is a Simple Medieval Gambling Dice 
+    Game. Instructables; Instructables. 
+    https://www.instructables.com/Gl%C3%BCckshaus-House-of-Fortune-Is-a-Medieval-Gambling/
+
+Wikipedia Contributors. (2024, May 29). Glückshaus. Wikipedia; Wikimedia 
+    Foundation. https://en.wikipedia.org/wiki/Gl%C3%BCckshaus
+
+# Attribution Table
+|*Method/function*|*Primary Author*|*Techniques Demonstrated*|
+|-----------------|----------------|-------------------------|
+|def              |Ashleigh        |f-strings containing     |
+|end_game_check   |Louie           |expressions              |
+|-----------------|----------------|-------------------------|
+|def              |Ashleigh        |Comprehensions or        |
+|end_game_check   |Louie           |or Generator Expressions |
+|-----------------|----------------|-------------------------|
