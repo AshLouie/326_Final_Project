@@ -100,5 +100,5 @@ Wikipedia Contributors. (2024, May 29). Glückshaus. Wikipedia; Wikimedia
 |def turn|Justin Namgung|if-else statements|
 |def clear_board|Chapponarot Bornhor|iteration over a dictionary|
 |__main__ game loop|Chapponarot Bornhor|argument parsing|
-|parse_args| Nhi Vu|ArgumentParser class
-|def valid_name|Nhi Vu| regular expressions
+|parse_args| Nhi Vu|ArgumentParser class|
+|def valid_name|Nhi Vu| regular expressions|
