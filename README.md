@@ -90,7 +90,6 @@ Wikipedia Contributors. (2024, May 29). Glückshaus. Wikipedia; Wikimedia
 # Attribution Table
 |*Method/function*|*Primary Author*|*Techniques Demonstrated*|
 |-----------------|----------------|-------------------------|
-|def              |Ashleigh        |f-strings containing     |
-|end_game_check   |Louie           |expressions              |
-|def              |Ashleigh        |Comprehensions or        |
-|end_game_check   |Louie           |or Generator Expressions |
+|def end_game_check|Ashleigh Louie |f-strings containing     |
+|def end_game_check|Ashleigh Louie|comprehensions or generator expressions|
+|
