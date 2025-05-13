@@ -94,7 +94,7 @@ Wikipedia Contributors. (2024, May 29). Glückshaus. Wikipedia; Wikimedia
 # Attribution Table
 |*Method/function*|*Primary Author*|*Techniques Demonstrated*|
 |-----------------|----------------|-------------------------|
-|def end_game_check|Ashleigh Louie |f-strings containing     |
+|def end_game_check|Ashleigh Louie |f-strings containing expressions|
 |def end_game_check|Ashleigh Louie|comprehensions or generator expressions|
 |def turn|Justin Namgung|randomization|
 |def turn|Justin Namgung|if-else statements|
